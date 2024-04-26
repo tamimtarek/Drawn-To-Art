@@ -1,15 +1,76 @@
-
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-    return (
-        <div>
+    const { createUser, setReload, updateUserProfile } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const handleRegister = e => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
 
-            <div className="flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
+        console.log(name, photo, email, password);
+
+
+        if (!/[A-Z]/.test(password)) {
+            return toast.warning('You Must use an uppercase in the password')
+        }
+
+        if (!/[a-z]/.test(password)) {
+            return toast.warning('You Must use a Lowercase in the password')
+        }
+
+        if (password.length < 6) {
+            return toast.warning('Password Must be at least 6 character')
+        }
+
+        
+        createUser(email, password)
+            .then(() => {
+                updateUserProfile(name, photo)
+                    .then(
+                        setReload(true),
+                        toast.success("Successfully create your account"),
+                        navigate(location?.state || "/"),
+                    )
+
+                e.target.reset();
+
+            })
+            .catch(error => {
+                toast.warning(error.message)
+            })
+        
+    }
+    return (
+        <div className="mt-8">
+
+            <div className="flex flex-col w-full mx-auto max-w-md px-4 py-8 bg-white rounded-lg shadow sm:px-6 md:px-8 lg:px-10">
                 <div className="self-center mb-6 text-xl font-light text-gray-600 sm:text-2xl dark:text-white">
-                    Login To Your Account
+                    Register Your Account
                 </div>
                 <div className="mt-8">
-                    <form action="#" autoComplete="off">
+                    <form onSubmit={handleRegister}>
+                        <div className="flex flex-col mb-2">
+                            <div className="flex relative ">
+                               
+                                <input type="text" name="name" id="" className=" rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your Name" />
+                            </div>
+                        </div>
+                        <div className="flex flex-col mb-2">
+                            <div className="flex relative ">
+                                
+                                <input type="text" id="" name="photo" className=" rounded-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Photo URL" />
+                            </div>
+                        </div>
                         <div className="flex flex-col mb-2">
                             <div className="flex relative ">
                                 <span className="rounded-l-md inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
@@ -18,7 +79,7 @@ const Register = () => {
                                         </path>
                                     </svg>
                                 </span>
-                                <input type="text" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email" />
+                                <input type="email" id="" name="email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your email" />
                             </div>
                         </div>
                         <div className="flex flex-col mb-6">
@@ -29,32 +90,25 @@ const Register = () => {
                                         </path>
                                     </svg>
                                 </span>
-                                <input type="password" id="sign-in-email" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your password" />
+                                <input type="password" id="" name="password" className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Your password" />
                             </div>
                         </div>
-                        <div className="flex items-center mb-6 -mt-4">
-                            <div className="flex ml-auto">
-                                <a href="#" className="inline-flex text-xs font-thin text-gray-500 sm:text-sm dark:text-gray-100 hover:text-gray-700 dark:hover:text-white">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                        <div className="flex w-full">
+                        <div className="flex w-full mt-7">
                             <button type="submit" className="py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                                Login
+                                Register
                             </button>
                         </div>
                     </form>
                 </div>
                 <div className="flex items-center justify-center mt-6">
                     <a href="#" target="_blank" className="inline-flex items-center text-xs font-thin text-center text-gray-500 hover:text-gray-700 dark:text-gray-100 dark:hover:text-white">
-                        <span className="ml-2">
-                            You don&#x27;t have an account?
+                        <span className="ml-2 text-black text-lg">
+                            Already have an account? <Link className="text-blue-500 font-bold" to="/login">Login</Link>
                         </span>
                     </a>
                 </div>
             </div>
-
+        <ToastContainer></ToastContainer>
         </div>
     );
 };
