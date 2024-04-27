@@ -4,7 +4,7 @@ const MyList = () => {
     return (
         <div>
             <div>
-                <h1 className="text-4xl text-center font-bold mt-9"><span className="text-red-500">My</span> Art & Craft</h1>
+                <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold mt-9"><span className="text-red-500">My</span> Art & Craft</h1>
             </div>
 
             <div className="container px-4 mx-auto sm:px-8">

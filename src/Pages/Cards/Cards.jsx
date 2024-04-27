@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import img1 from "../../assets/img2.jpg"
+import { IoMdStarHalf } from "react-icons/io";
 
 const Cards = ({ craft }) => {
-    const { itemName, photoURL, description, email, price, processing_time, rating, stockStatus, subcategory, username, _id } = craft;
+    const { itemName, photoURL, price, rating, subcategory, _id } = craft;
     return (
 
 
@@ -18,6 +18,9 @@ const Cards = ({ craft }) => {
                 <div className="flex items-center justify-between ">
                     <p className="text-white">
                         {price}
+                    </p>
+                    <p className="text-white flex items-center gap-2">
+                    {rating}<IoMdStarHalf />
                     </p>
                     <Link to={`/details/${_id}`} type="button" className="btn outline-none text-base font-medium text-white bg-pink-500 hover:bg-pink-700">
                         View Details

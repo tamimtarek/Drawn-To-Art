@@ -26,16 +26,17 @@ const Home = () => {
                     slidesPerView={1}
                     navigation={true}
                     loop={true}
-                    autoplay={
-                        {
-                            delay: 2000,
+                    // autoplay={
+                    //     {
+                    //         delay: 2000,
 
-                        }
-                    }
+                    //     }
+                    // }
                     pagination={{ clickable: true }}
                     scrollbar={{ draggable: true }}
                 >
                     <SwiperSlide>
+
                         <img src={image1} alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
@@ -52,12 +53,17 @@ const Home = () => {
 
             </div>
             <div>
-                <h2 className="text-4xl font-bold text-center mt-8 mb-8"><span className="text-red-600">Explore</span> Your Design</h2>
+                <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-center mt-8 mb-8"><span className="text-red-600">Explore</span> Your Design</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-[1220px] mx-auto" >
                     {
-                        crafts.slice(0,6).map(craft => <Cards key={craft._id} craft={craft}></Cards>)
+                        crafts.slice(0, 6).map(craft => <Cards key={craft._id} craft={craft}></Cards>)
                     }
                 </div>
+            </div>
+            <div>
+
+               
+
             </div>
         </div>
     );
