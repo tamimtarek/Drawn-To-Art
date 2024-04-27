@@ -5,6 +5,7 @@ const Footer = () => {
     return (
         <footer className="bg-white mt-6 dark:bg-gray-800 w-full py-8">
             <div className="max-w-screen-xl px-4 mx-auto">
+                <h3 className="text-white text-center text-lg font-light">DRAWN TO ART</h3>
                 <ul className="flex flex-wrap justify-between max-w-screen-md mx-auto text-lg font-light">
                     <li className="my-2">
                         <Link to="https://www.facebook.com" className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">

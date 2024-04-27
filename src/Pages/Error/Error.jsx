@@ -36,7 +36,7 @@ const Error = () => {
                         </Link>
                     </div>
                     <div className="relative block w-full max-w-md mx-auto md:mt-0 lg:max-w-2xl">
-                        <img src="/images/illustrations/1.svg" />
+                        <img src="https://www.tailwind-kit.com/images/illustrations/1.svg" />
                     </div>
                 </div>
             </div>

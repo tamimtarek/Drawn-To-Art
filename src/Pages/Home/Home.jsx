@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 const Home = () => {
     return (
@@ -15,10 +15,17 @@ const Home = () => {
 
             <Swiper
                 className="lg:h-[550px] rounded-lg"
-                modules={[Navigation, Pagination, Scrollbar]}
+                modules={[Navigation, Pagination, Scrollbar, Autoplay]}
                 spaceBetween={80}
                 slidesPerView={1}
                 navigation={true}
+                loop={true}
+                autoplay={
+                    {
+                      delay: 2000,
+
+                    }
+                }
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
             >
