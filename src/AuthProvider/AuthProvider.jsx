@@ -9,7 +9,8 @@ const AuthProvider = ({children}) => {
     const [reload, setReload] = useState(false);
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
-
+    const [crafts, setCrafts] = useState([]);
+    const [craft, setCraft] = useState();
     const googleUser = () =>{
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
@@ -44,9 +45,14 @@ const AuthProvider = ({children}) => {
            })
      }
 
+     useEffect(()=>{
+        fetch("http://localhost:5000/crafts")
+        .then(res =>res.json())
+        .then(data=> setCrafts(data))
+     },[])
+
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            console.log("user on the state", currentUser);
             setUser(currentUser);
             setLoading(false);
         });
@@ -64,7 +70,9 @@ const AuthProvider = ({children}) => {
         googleUser,
         facebookUser,
         updateUserProfile,
-        setReload
+        setReload,
+        crafts,
+        craft
     }
 
     return (

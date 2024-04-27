@@ -9,6 +9,7 @@ import MyList from "../Pages/MyList/MyList";
 import AddCraft from "../Pages/AddCraft/AddCraft";
 import PrivetRoute from "./PrivetRoute";
 import UpdateItems from "../Pages/UpdateItems/UpdateItems";
+import CardDetails from "../Pages/CardDetails/CardDetails";
 
 
 const router = createBrowserRouter([
@@ -30,10 +31,6 @@ const router = createBrowserRouter([
           element: <Register></Register>
         },
         {
-          path: "/allArt",
-          element: <Cards></Cards>
-        },
-        {
           path: "/mylist",
           element: <PrivetRoute><MyList></MyList></PrivetRoute>
         },
@@ -44,6 +41,11 @@ const router = createBrowserRouter([
         {
           path: "/update",
           element: <UpdateItems></UpdateItems>
+        },
+        {
+          path: "/details/:id",
+          element: <CardDetails></CardDetails>,
+          loader: () => fetch("http://localhost:5000/crafts")
         }
       ]
     },

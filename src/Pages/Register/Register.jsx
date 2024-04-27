@@ -55,7 +55,7 @@ const Register = () => {
 
             <div className="flex flex-col w-full mx-auto max-w-md px-4 py-8 bg-white rounded-lg shadow sm:px-6 md:px-8 lg:px-10">
                 <div className="self-center mb-6 text-xl font-light text-gray-600 sm:text-2xl dark:text-white">
-                    Register Your Account
+                    <h1 className="text-black font-bold text-4xl text-center mt-7">Register Your Account</h1>
                 </div>
                 <div className="mt-8">
                     <form onSubmit={handleRegister}>
