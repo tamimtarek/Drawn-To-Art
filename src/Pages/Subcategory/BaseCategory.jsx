@@ -1,21 +1,12 @@
-import { useLoaderData, useParams } from "react-router-dom";
-import BaseCategory from "./BaseCategory";
-import { useState } from "react";
 
 
-const CategoryBase = () => {
-    const categoryData = useLoaderData();
-    
-    const {subcategory_name} = useParams();
-    console.log(subcategory_name);
-    const categorys = categoryData.find(category => category.subcategory_name == subcategory_name);
-    
-    
+const BaseCategory = ({category}) => {
     return (
         <div>
+
             <div className="m-auto overflow-hidden rounded-lg shadow-lg cursor-pointer h-90 w-60 md:w-80">
                 <a href="#" className="block w-full h-full">
-                    <img alt="blog photo" src={categorys.image} className="object-cover w-full max-h-40" />
+                    <img alt="blog photo" src="/images/blog/1.jpg" className="object-cover w-full max-h-40" />
                     <div className="w-full p-4 bg-white dark:bg-gray-800">
                         <p className="font-medium text-indigo-500 text-md">
                             Article
@@ -29,8 +20,9 @@ const CategoryBase = () => {
                     </div>
                 </a>
             </div>
+
         </div>
     );
 };
 
-export default CategoryBase;
+export default BaseCategory;
