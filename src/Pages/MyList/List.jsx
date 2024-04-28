@@ -47,9 +47,9 @@ const List = ({ item, items, setItems }) => {
 
     return (
 
-        <div className="flex items-center justify-center h-full w-96">
+        <div className="flex items-center justify-center w-96">
             <div className="w-full p-4">
-                <div className="flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl card">
+                <div className="flex flex-col justify-center p-10 bg-white h-[100%] rounded-lg shadow-2xl card">
                     <div className="prod-title">
                         <p className="text-2xl font-bold text-gray-900 uppercase">
                             {itemName}
@@ -59,7 +59,7 @@ const List = ({ item, items, setItems }) => {
                         </p>
                     </div>
                     <div className="prod-img">
-                        <img src={photoURL} className="object-cover object-center w-full" />
+                        <img src={photoURL} className="object-cover object-center h-[300px] w-full" />
                     </div>
                     <div className="grid gap-10 prod-info">
                         <div>

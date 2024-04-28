@@ -12,9 +12,10 @@ import { Autoplay, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Cards from "../Cards/Cards";
+import Subcategory from "../Subcategory/Subcategory";
 const Home = () => {
-    const { crafts } = useContext(AuthContext);
-    console.log(crafts);
+    const { crafts, craftCategory } = useContext(AuthContext);
+    console.log(craftCategory)
     return (
         <div className="lg:w-[1280px] mx-auto">
 
@@ -60,10 +61,10 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <div>
-
-               
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                 {
+                    craftCategory.map(category =><Subcategory key={category._id} category={category}></Subcategory>)
+                 }   
             </div>
         </div>
     );

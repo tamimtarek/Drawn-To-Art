@@ -11,6 +11,8 @@ import PrivetRoute from "./PrivetRoute";
 import UpdateItems from "../Pages/UpdateItems/UpdateItems";
 import CardDetails from "../Pages/CardDetails/CardDetails";
 import AllArt from "../AllArt/AllArt";
+import CategoryBase from "../Pages/Subcategory/CategoryBase";
+import CategoryCardDetails from "../Pages/Subcategory/CategoryCardDetails";
 
 
 const router = createBrowserRouter([
@@ -41,7 +43,8 @@ const router = createBrowserRouter([
         },
         {
           path: "/update/:id",
-          element: <UpdateItems></UpdateItems>
+          element: <UpdateItems></UpdateItems>,
+          loader: () => fetch("http://localhost:5000/crafts")
         },
         {
           path: "/details/:id",
@@ -51,6 +54,14 @@ const router = createBrowserRouter([
         {
           path: "/allart",
           element: <AllArt></AllArt>
+        },
+        {
+          path: "/category/:subcategory_name",
+          element: <CategoryBase></CategoryBase>
+        },
+        {
+          path: "/artCategory/:id",
+          element: <CategoryCardDetails></CategoryCardDetails>
         }
       ]
     },

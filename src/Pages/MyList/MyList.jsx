@@ -14,9 +14,9 @@ const MyList = () => {
     return (
         <div>
             <div>
-                <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold mt-9"><span className="text-red-500 mb-6">My</span> Art & Craft</h1>
+                <h1 className="text-xl md:text-2xl lg:text-4xl mb-9 text-center font-bold mt-9"><span className="text-red-500 mb-6">My</span> Art & Craft</h1>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 justify-center items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mx-auto justify-center items-center">
                 {
                     items.map(item => <List key={item._id} item={item} items={items} setItems={setItems}></List>)
                 }

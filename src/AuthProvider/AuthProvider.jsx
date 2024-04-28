@@ -10,7 +10,7 @@ const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
     const [crafts, setCrafts] = useState([]);
-    const [craft, setCraft] = useState();
+    const [craftCategory, setCraftCategory] = useState();
     const googleUser = () =>{
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
@@ -50,6 +50,11 @@ const AuthProvider = ({children}) => {
         .then(res =>res.json())
         .then(data=> setCrafts(data))
      },[])
+     useEffect(()=>{
+        fetch("http://localhost:5000/subcategory")
+        .then(res =>res.json())
+        .then(data=> setCraftCategory(data))
+     },[])
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
@@ -72,7 +77,7 @@ const AuthProvider = ({children}) => {
         updateUserProfile,
         setReload,
         crafts,
-        craft
+        craftCategory
     }
 
     return (
