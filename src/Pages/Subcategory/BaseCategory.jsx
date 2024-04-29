@@ -7,7 +7,7 @@ const BaseCategory = ({ cate }) => {
     return (
         <div>
 
-            <div className="m-auto overflow-hidden rounded-lg shadow-lg h-90 w-60 md:w-80 cursor-pointer 0">
+            <div className="m-auto overflow-hidden rounded-lg shadow-lg h-90 w-[90%] cursor-pointer 0">
                 <a href="#" className="block w-full h-full">
                     <img alt="blog photo" src={image} className="object-cover h-80 w-full " />
                     <div className="w-full p-4 bg-white dark:bg-gray-800">

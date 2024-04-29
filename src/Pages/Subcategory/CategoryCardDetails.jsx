@@ -4,7 +4,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 const CategoryCardDetails = () => {
     const allData = useLoaderData();
     const { id } = useParams();
-    const craftdetails = allData.find(data => data._id === id);
+    const craftdetails = allData?.find(data => data._id === id);
     console.log(craftdetails)
     const { image, item_name, subcategory_name, short_description, price, rating, customization, processing_time, stockStatus } = craftdetails;
 

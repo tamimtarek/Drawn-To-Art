@@ -19,7 +19,7 @@ const CategoryBase = () => {
         <div>
             <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-center mt-8 mb-8">
                 <span className="text-red-600">{subcategory_name}</span> Categories</h2>
-            <div className="flex flex-col md:flex-row justify-center gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2">
             {
                 category.map(cate => <BaseCategory key={cate._id} cate={cate}></BaseCategory>)
             }

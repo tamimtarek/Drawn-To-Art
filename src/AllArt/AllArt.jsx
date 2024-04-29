@@ -17,7 +17,7 @@ const AllArt = () => {
                 <div className="py-8">
                     <div className="px-4 py-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
                         <div className="inline-block min-w-full overflow-hidden rounded-lg shadow">
-                            <table className="min-w-full leading-normal">
+                            <table className="w-full leading-normal">
                                 <thead>
                                     <tr>
                                         <th scope="col" className="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">

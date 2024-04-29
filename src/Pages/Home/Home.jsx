@@ -72,7 +72,7 @@ const Home = () => {
                             <div className="hero-overlay bg-opacity-60"></div>
                             <div className="hero-content text-center text-neutral-content">
                                 <div className="max-w-md">
-                                    <h1 className="mb-5 text-5xl font-bold">DRAWN TO ART</h1>
+                                    <h1 className="mb-5 text-5xl font-bold">  DRAWN TO ART</h1>
                                     <p className="mb-5"><span>celebrates creativity, ignites inspiration, and explores the beauty of self-expression through diverse mediums, captivating imagery, and artistic vision</span></p>
                                 </div>
                             </div>
@@ -125,16 +125,16 @@ const Home = () => {
                 </div>
             </div>
             <div>
-                <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-center mt-8 mb-8"><span className="text-red-600">Art & Craft</span> Categories</h2>
+                <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-center mt-8 mb-8"><span className="text-red-600">Art & Craft</span>  Categories</h2>
                 <p className="text-center font-light mb-7">Discover diverse art forms and crafts, from painting to pottery, offering endless <br /> opportunities for creative expression.</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 mr-2 mb-10 ml-2 gap-5">
                     {
                         craftCategory?.map(category => <Subcategory key={category._id} category={category}></Subcategory>)
                     }
                 </div>
             </div>
             <div>
-                <div className="bg-white py-24 sm:py-32">
+                <div className="bg-white mb-10 py-24 sm:py-32">
                     <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
                         <div className="max-w-2xl">
                             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet our leadership</h2>
@@ -159,7 +159,7 @@ const Home = () => {
                 </div>
             </div>
             <div>
-                <div className="bg-white py-24 sm:py-32">
+                <div className="bg-white mb-10 py-24 sm:py-32">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="mx-auto max-w-2xl lg:mx-0">
                             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the blog</h2>

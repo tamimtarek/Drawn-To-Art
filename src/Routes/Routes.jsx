@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/mylist",
-          element: <PrivetRoute><MyList></MyList></PrivetRoute>
+          element: <PrivetRoute><MyList></MyList></PrivetRoute>,
         },
         {
           path: "/addArtCraft",
@@ -62,6 +62,7 @@ const router = createBrowserRouter([
         {
           path: "/artCategory/:id",
           element: <CategoryCardDetails></CategoryCardDetails>,
+          loader: () => fetch("https://drawn-to-art-server.vercel.app/subcategory")
         }
       ]
     },

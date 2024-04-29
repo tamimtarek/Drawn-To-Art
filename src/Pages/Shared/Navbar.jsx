@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useContext, useEffect, useState } from "react";
-import { useTypewriter } from "react-simple-typewriter";
+
 
 
 const Navbar = () => {
@@ -14,20 +14,16 @@ const Navbar = () => {
         <li><NavLink to="/mylist">My Art List</NavLink></li>
     </>
 
-    const [typeEffect] = useTypewriter({
-        words: ['DRAWN TO ART'],
-        loop: {},
-        typeSpeed: 100,
-        delaySpeed:1000,
-    })
+    
 
     useEffect(() => {
         localStorage.setItem('color', color);
         const dataTheme = localStorage.getItem('color');
         document.querySelector('html').setAttribute('data-theme', dataTheme)
     }, [color])
-    console.log(color)
+    
     const handleToggle = e => {
+
         if (e.target.checked) {
             setColor('dark')
         }
@@ -36,11 +32,12 @@ const Navbar = () => {
         }
 
     }
-
+    
     const handleLogout = e => {
         e.preventDefault();
         return logOut();
     }
+    
 
     return (
         <div className="navbar text-white mb-6 bg-[#3c4858]">
@@ -53,7 +50,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="font-extrabold lg:text-3xl text-white"><span className="text-red-500">{typeEffect} </span></a>
+                <a className="font-extrabold lg:text-3xl text-white"><span className="text-red-500">DRAWN </span>TO ART</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
