@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from "../Firebase/firebase";
-
 export const AuthContext = createContext(null);
 const googleProvider =new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
@@ -55,7 +54,7 @@ const AuthProvider = ({children}) => {
         .then(res =>res.json())
         .then(data=> setCraftCategory(data))
      },[])
-
+     
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);

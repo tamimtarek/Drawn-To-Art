@@ -13,6 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Cards from "../Cards/Cards";
 import Subcategory from "../Subcategory/Subcategory";
+
 const people = [
     {
         name: 'TAREKUL ISLAM',
@@ -44,7 +45,7 @@ const posts = [
 ];
 const Home = () => {
     const { crafts, craftCategory } = useContext(AuthContext);
-    console.log(craftCategory)
+    
     return (
         <div className="lg:w-[1280px] mx-auto">
 
@@ -128,7 +129,7 @@ const Home = () => {
                 <p className="text-center font-light mb-7">Discover diverse art forms and crafts, from painting to pottery, offering endless <br /> opportunities for creative expression.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 gap-5">
                     {
-                        craftCategory.map(category => <Subcategory key={category._id} category={category}></Subcategory>)
+                        craftCategory?.map(category => <Subcategory key={category._id} category={category}></Subcategory>)
                     }
                 </div>
             </div>

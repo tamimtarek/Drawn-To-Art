@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useContext, useEffect, useState } from "react";
+import { useTypewriter } from "react-simple-typewriter";
 
 
 const Navbar = () => {
@@ -12,6 +13,12 @@ const Navbar = () => {
         <li><NavLink to="/addArtCraft">Add Art & Craft</NavLink></li>
         <li><NavLink to="/mylist">My Art List</NavLink></li>
     </>
+
+    const [typeEffect] = useTypewriter({
+        words: ['DRAWN TO ART'],
+        loop: {},
+        delaySpeed:700,
+    })
 
     useEffect(() => {
         localStorage.setItem('color', color);
@@ -45,7 +52,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="font-extrabold lg:text-3xl text-white"><span className="text-red-500">DRAWN </span>TO ART</a>
+                <a className="font-extrabold lg:text-3xl text-white"><span className="text-red-500">{typeEffect} </span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

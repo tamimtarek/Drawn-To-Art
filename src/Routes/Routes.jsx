@@ -4,7 +4,6 @@ import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
-import Cards from "../Pages/Cards/Cards";
 import MyList from "../Pages/MyList/MyList";
 import AddCraft from "../Pages/AddCraft/AddCraft";
 import PrivetRoute from "./PrivetRoute";
