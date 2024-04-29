@@ -48,6 +48,8 @@ const UpdateItems = () => {
 
     return (
         <div className=" bg-base-200">
+            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-center  mb-8">
+                <span className="text-red-600">Update</span> Your Craft</h2>
             <div className="hero-content">
                 <div className=" w-full shadow-2xl bg-base-100">
                     <form onSubmit={handleUpdate} className="card-body">
