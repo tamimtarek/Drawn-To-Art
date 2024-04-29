@@ -51,7 +51,16 @@ const AddCraft = () => {
                                 <label className="label">
                                     <span className="label-text">Subcategory_Name</span>
                                 </label>
-                                <input type="text" placeholder="subcategory_Name" name="subcategory_Name" className="input input-bordered w-full" />
+                                {/* <input type="text" placeholder="subcategory_Name" name="subcategory_Name" className="input input-bordered w-full" /> */}
+                                <select name="subcategory_Name" className="select select-bordered w-full">
+                                    <option disabled selected>Category</option>
+                                    <option value="Landscape Painting">Landscape Painting</option>
+                                    <option value="Watercolour Painting">Watercolour Painting</option>
+                                    <option value="Oil Painting">Oil Painting</option>
+                                    <option value="Charcoal Sketching">Charcoal Sketching</option>
+                                    <option value="Cartoon Drawing">Cartoon Drawing</option>
+                                    <option value="Portrait Drawing">Portrait Drawing</option>
+                                </select>
                             </div>
                         </div>
                         <div className="lg:flex w-full gap-5">

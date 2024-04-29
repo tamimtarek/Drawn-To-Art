@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useContext, useEffect, useState } from "react";
+import { Tooltip } from "react-tooltip";
 
 
 
@@ -14,14 +15,14 @@ const Navbar = () => {
         <li><NavLink to="/mylist">My Art List</NavLink></li>
     </>
 
-    
+
 
     useEffect(() => {
         localStorage.setItem('color', color);
         const dataTheme = localStorage.getItem('color');
         document.querySelector('html').setAttribute('data-theme', dataTheme)
     }, [color])
-    
+
     const handleToggle = e => {
 
         if (e.target.checked) {
@@ -32,12 +33,12 @@ const Navbar = () => {
         }
 
     }
-    
+
     const handleLogout = e => {
         e.preventDefault();
         return logOut();
     }
-    
+
 
     return (
         <div className="navbar text-white mb-6 bg-[#3c4858]">
@@ -77,11 +78,19 @@ const Navbar = () => {
                 {
                     user ? <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+
+                            <a
+                                data-tooltip-id="my-tooltip"
+                                data-tooltip-content={user.displayName}
+                            >
                             <div className="w-10">
                                 {
-                                    user && <button><img src={user.photoURL} alt="" title={user.displayName} className="rounded-full" /></button>
+                                    user && <button><img src={user.photoURL} alt="" className="rounded-full" /></button>
                                 }
                             </div>
+                            </a>
+                            <Tooltip id="my-tooltip" />
+
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             {
