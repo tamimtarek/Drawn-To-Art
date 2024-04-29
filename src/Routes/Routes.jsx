@@ -43,12 +43,12 @@ const router = createBrowserRouter([
         {
           path: "/update/:id",
           element: <UpdateItems></UpdateItems>,
-          loader: () => fetch("http://localhost:5000/crafts")
+          loader: () => fetch("https://drawn-to-art-server.vercel.app/crafts")
         },
         {
           path: "/details/:id",
           element: <CardDetails></CardDetails>,
-          loader: () => fetch("http://localhost:5000/crafts")
+          loader: () => fetch("https://drawn-to-art-server.vercel.app/crafts")
         },
         {
           path: "/allart",
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         {
           path: "/category/:subcategory_name",
           element: <CategoryBase></CategoryBase>,
-          loader: () => fetch("http://localhost:5000/subcategory")
+          loader: () => fetch("https://drawn-to-art-server.vercel.app/subcategory")
         },
         {
           path: "/artCategory/:id",

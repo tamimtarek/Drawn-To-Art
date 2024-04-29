@@ -10,7 +10,7 @@ const MyList = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/crafts/${user.email}`)
+        fetch(`https://drawn-to-art-server.vercel.app/crafts/${user.email}`)
             .then(res => res.json())
             .then(data => setItems(data));
     }, [user]);

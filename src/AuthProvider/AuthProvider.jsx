@@ -45,12 +45,12 @@ const AuthProvider = ({children}) => {
      }
 
      useEffect(()=>{
-        fetch("http://localhost:5000/crafts")
+        fetch("https://drawn-to-art-server.vercel.app/crafts")
         .then(res =>res.json())
         .then(data=> setCrafts(data))
      },[])
      useEffect(()=>{
-        fetch("http://localhost:5000/subcategory")
+        fetch("https://drawn-to-art-server.vercel.app/subcategory")
         .then(res =>res.json())
         .then(data=> setCraftCategory(data))
      },[])

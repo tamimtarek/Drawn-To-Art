@@ -26,7 +26,7 @@ const List = ({ item, items, setItems }) => {
                 text: "Your file has been deleted.",
                 icon: "success"
               });
-              fetch(`http://localhost:5000/crafts/${_id}`, {
+              fetch(`https://drawn-to-art-server.vercel.app/crafts/${_id}`, {
                 method: "DELETE",
               })
               .then(res => res.json())

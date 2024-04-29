@@ -10,7 +10,7 @@ const CategoryBase = () => {
     const {subcategory_name} = useParams();
     console.log(subcategory_name);
     useEffect(()=>{
-        fetch(`http://localhost:5000/subcategory/${subcategory_name}`)
+        fetch(`https://drawn-to-art-server.vercel.app/subcategory/${subcategory_name}`)
         .then(res => res.json())
         .then(data => setCategory(data))
     },[subcategory_name])

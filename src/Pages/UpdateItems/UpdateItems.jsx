@@ -24,7 +24,7 @@ const UpdateItems = () => {
         const username = user.displayName;
         const email = user.email;
         const allInput = { itemName, subcategory, photoURL, price, description, rating, customization, processing_time, stockStatus, username, email };
-        fetch(`http://localhost:5000/crafts/${id}`, {
+        fetch(`https://drawn-to-art-server.vercel.app/crafts/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
