@@ -17,7 +17,8 @@ const Navbar = () => {
     const [typeEffect] = useTypewriter({
         words: ['DRAWN TO ART'],
         loop: {},
-        delaySpeed:700,
+        typeSpeed: 100,
+        delaySpeed:1000,
     })
 
     useEffect(() => {

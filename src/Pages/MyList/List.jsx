@@ -1,3 +1,4 @@
+import { Roll } from "react-awesome-reveal";
 import { IoMdStarHalf } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -47,7 +48,8 @@ const List = ({ item, items, setItems }) => {
 
     return (
 
-        <div className="flex items-center justify-center w-96">
+        <Roll>
+            <div className="flex items-center justify-center w-96">
             <div className="w-full p-4">
                 <div className="flex flex-col justify-center p-10 bg-white h-[100%] rounded-lg shadow-2xl card">
                     <div className="prod-title">
@@ -91,6 +93,7 @@ const List = ({ item, items, setItems }) => {
                 </div>
             </div>
         </div>
+        </Roll>
 
 
     );
