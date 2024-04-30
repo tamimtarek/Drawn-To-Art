@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="bg-white mt-6 dark:bg-gray-800 w-full py-8">
+        <footer className="mt-6 dark:bg-gray-800 w-full py-8">
             <div className="max-w-screen-xl px-4 mx-auto">
                 <h3 className="text-white text-center text-lg font-light">DRAWN TO ART</h3>
                 <ul className="flex flex-wrap justify-between max-w-screen-md mx-auto text-lg font-light">
