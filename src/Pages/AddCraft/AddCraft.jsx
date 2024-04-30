@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
 
 const AddCraft = () => {
     const { user } = useContext(AuthContext);
@@ -19,7 +20,7 @@ const AddCraft = () => {
         const stockStatus = form.get("stockStatus");
         const username = user.displayName;
         const email = user.email;
-        const allInput = { itemName, subcategory, photoURL, price, description, rating, customization, processing_time, stockStatus, username, email };
+        const allInput = {  itemName, subcategory, photoURL, price, description, rating, customization, processing_time, stockStatus, username, email };
         console.log(allInput);
         fetch("https://drawn-to-art-server.vercel.app/crafts", {
             method: "POST",
@@ -29,8 +30,13 @@ const AddCraft = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                toast.success("Craft Added Successfully")
+                Swal.fire({
+                    title:"Success",
+                    text: "Successfully Added Your Craft",
+                    icon: "success",
+                    confirmButtonText: "Cool"})
                 e.target.reset();
+                
             })
 
     }
