@@ -8,7 +8,7 @@ const Cards = ({ craft }) => {
 
 
         <Slide>
-            <div className="w-full h-full p-2 m-auto bg-white shadow-lg rounded-2xl">
+            <div className="w-full h-full p-2 m-auto bg-white shadow-lg rounded-xl">
                 <img src={photoURL} alt="adidas" className=" p-4 m-auto h-60" />
                 <div className="p-4 m-3 bg-[#1F2937] rounded-lg">
                     <p className="text-xl font-bold text-white ">

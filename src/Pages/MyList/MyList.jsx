@@ -15,6 +15,25 @@ const MyList = () => {
             .then(data => setItems(data));
     }, [user]);
     
+
+    const handleSort = sort =>{
+        if(sort == 'Yes'){
+
+            const yesData = items.filter((data) => data.customization == "Yes");
+            setItems(yesData);
+        }
+        else if(sort == 'No'){
+            const noData = items.filter((data) => data.customization == "No");
+            setItems(noData);
+
+        }
+    }
+    // const Yes = () => {
+    //     // console.log(yesData);
+    //   };
+    //   const No = () => {
+    //   };
+
     return (
         <div>
             <div>
@@ -24,9 +43,8 @@ const MyList = () => {
                     <details className="dropdown mb-8">
                         <summary className="m-1 btn">Customization</summary>
                         <div className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                            <button  className="btn">All</button>
-                            <button  className="btn">Yes</button>
-                            <button  className="btn">No</button>
+                            <button onClick={()=>handleSort('Yes')} className="btn">Yes</button>
+                            <button onClick={()=>handleSort('No')} className="btn">No</button>
                         </div>
                     </details>
                 </div>

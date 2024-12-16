@@ -22,7 +22,7 @@ const AddCraft = () => {
         const email = user.email;
         const allInput = {  itemName, subcategory, photoURL, price, description, rating, customization, processing_time, stockStatus, username, email };
         console.log(allInput);
-        fetch("https://drawn-to-art-server.vercel.app/crafts", {
+        fetch("https://localhost/crafts", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(allInput),
